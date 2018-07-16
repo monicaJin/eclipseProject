@@ -6,6 +6,34 @@ import java.util.Iterator;
 
 public class DailyTest {
 	
+	
+	public void test04() {
+		/*
+		 * 题目：将一个正整数分解质因数。例如：输入90,打印出90=2*3*3*5。 
+(1)如果这个质数恰等于n，则说明分解质因数的过程已经结束，打印出即可。 
+(2)如果n<>k，但n能被k整除，则应打印出k的值，并用n除以k的商,作为新的正整数你n,重复执行第一步。 
+(3)如果n不能被k整除，则用k+1作为k的值,重复执行第一步。 
+		 */
+		
+		int i=Integer.parseInt(ReadFunc.readStr());
+		int ii=2;
+		ArrayList<Integer> list=new ArrayList<Integer>();
+		
+		while(ii<=i) {
+			if(i%ii==0) {
+				if (Methods.mathMethods(ii)) {
+					list.add(ii);
+					i=i/ii;
+					ii=2;
+					continue;
+				}
+			}
+			ii++;
+		}
+		PrintFunc.printResult(list);
+		
+	}
+	
 	public void test03(){
 		/*
 		 * 题目：打印出所有的"水仙花数"，所谓"水仙花数"是指一个三位数，其各位数字立方和等于该数本身。例如：
