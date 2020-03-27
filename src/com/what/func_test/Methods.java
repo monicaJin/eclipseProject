@@ -1,8 +1,8 @@
-package com.test.what.func_test;
+package com.what.func_test;
 
 import java.util.ArrayList;
 
-import com.test.what.Utils.PrintFunc;
+import com.what.Utils.PrintFunc;
 
 public class Methods {
 	

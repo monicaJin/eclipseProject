@@ -1,4 +1,4 @@
-package com.test.what.func_test;
+package com.what.func_test;
 import com.alibaba.fastjson.JSON;
 //import org.json.JSONArray;
 //import org.json.JSONException;
@@ -214,7 +214,7 @@ public class TryFunc {
 	}
 	
 	public static void encryped_psw()  {
-//		com.test.PublicKeyMap keymap=new com.test.PublicKeyMap();
+//		com.PublicKeyMap keymap=new com.PublicKeyMap();
 		String modulus="008191bd2309c2f46d3ccb0440d2ed4659e96a91194a04b204c647233c7ddbbd8deed38266252112b3e4dc220f49315ff8b11ffc83423b800f40b13d204101fc7c572a0cb043fc0a7e53ec62468e0530afb2ac051c62c01b63203650ffdd40b83a6fff5279fce0cd313b27c30d9d6f861fbde3fa34f83afd3cca4a30d0515f08bf";
 		String public_exponent="010001";
 		RSAPublicKey publickey=RSAUtils.generateRSAPublicKey(modulus.getBytes(), public_exponent.getBytes());

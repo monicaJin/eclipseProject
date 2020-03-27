@@ -1,9 +1,9 @@
-package com.test.what.func_test;
+package com.what.func_test;
 
 import java.util.ArrayList;
 
-import com.test.what.Utils.PrintFunc;
-import com.test.what.Utils.ReadFunc;
+import com.what.Utils.PrintFunc;
+import com.what.Utils.ReadFunc;
 
 import java.util.*;
 

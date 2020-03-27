@@ -1,6 +1,6 @@
-package com.test.what;
+package com.what;
 
-import com.test.what.func_test.TryFunc;
+import com.what.func_test.TryFunc;
 
 public class StartFunc {
 
