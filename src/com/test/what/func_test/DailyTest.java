@@ -1,10 +1,98 @@
-package com.test.what;
+package com.test.what.func_test;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
+import com.test.what.Utils.PrintFunc;
+import com.test.what.Utils.ReadFunc;
+
+import java.util.*;
 
 public class DailyTest {
+	
+	
+	public void test07() {
+		/*
+		 * 题目：输入一行字符，分别统计出其中英文字母、空格、数字和其它字符的个数。 
+		 */
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	public void test06() {
+		/*
+		 * 输入两个正整数m和n，求其最大公约数和最小公倍数。
+		 */
+		
+		int firstnum=Integer.parseInt(ReadFunc.readStr("pls input your first number: "));
+		int secondnum=Integer.parseInt(ReadFunc.readStr("pls input your second number: "));
+		ArrayList<Integer> firstlist=new ArrayList<Integer>(Methods.getPrimeFactor(firstnum));
+		ArrayList<Integer> secondlist=new ArrayList<Integer>(Methods.getPrimeFactor(secondnum));
+
+		ArrayList<Integer> commonFactorList=new ArrayList<Integer>();
+		ArrayList<Integer> uniqueFactorList=new ArrayList<Integer>();
+		Integer commonFactor=1,commonMultiple=1;
+	
+		ArrayList<Boolean> firstboo=new ArrayList<Boolean>();
+		ArrayList<Boolean> secondboo=new ArrayList<Boolean>();
+		
+		//initializing boo list
+		for (Integer i:firstlist) {
+			firstboo.add(false);
+		}		
+		for (Integer i:secondlist) {
+			secondboo.add(false);
+		}
+	
+		//generate commonFactor list & partial commonMultiple list
+		for (int i=0;i<firstlist.size();i++) {
+			for (int ii=0;ii<secondlist.size();ii++) {
+				if (secondlist.get(ii)==firstlist.get(i)) {
+					if (secondboo.get(ii)==false && firstboo.get(i)==false) {
+						commonFactorList.add(firstlist.get(i));
+						secondboo.add(ii,true);
+						firstboo.add(i,true);
+						break;
+					}
+				}
+			}
+			if (firstboo.get(i)==false) {
+				uniqueFactorList.add(firstlist.get(i));
+			}
+		}
+
+		if (commonFactorList.size()!=0) {
+			Iterator<Integer> ite=commonFactorList.iterator();
+			while(ite.hasNext()) {
+				commonFactor=commonFactor*ite.next();
+			}
+		}
+		System.out.println("commonFactor is : "+commonFactor);
+		
+		
+		///////////////generate  Common Multiple
+		
+		for (int i=0;i<secondlist.size();i++) {
+			if(secondboo.get(i)==false) {
+				uniqueFactorList.add(secondlist.get(i));
+			}
+		}
+		
+		Iterator<Integer> uniqueite=uniqueFactorList.iterator();		
+		while(uniqueite.hasNext()) {
+			int uni=uniqueite.next();
+			System.out.println("uni: "+uni);
+			commonMultiple=commonMultiple*uni;
+		}
+		commonMultiple=commonMultiple*commonFactor;
+		System.out.println("commonMultiple is : "+commonMultiple);
+		
+		
+	}
 	
 	
 	public void test04() {
@@ -15,13 +103,13 @@ public class DailyTest {
 (3)如果n不能被k整除，则用k+1作为k的值,重复执行第一步。 
 		 */
 		
-		int i=Integer.parseInt(ReadFunc.readStr());
+		int i=Integer.parseInt(ReadFunc.readStr(""));
 		int ii=2;
 		ArrayList<Integer> list=new ArrayList<Integer>();
 		
 		while(ii<=i) {
 			if(i%ii==0) {
-				if (Methods.mathMethods(ii)) {
+				if (Methods.isPrime(ii)) {
 					list.add(ii);
 					i=i/ii;
 					ii=2;

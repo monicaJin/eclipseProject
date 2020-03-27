@@ -1,13 +1,17 @@
-package com.test.what;
+package com.test.what.Utils;
 
 import java.io.*;
 
 public class ReadFunc {
-	public  static String readStr() {
+	public  static String readStr(String introduction) {
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		String str=null;
 		
-		System.out.println("pls input your value: ");
+		if (introduction=="") {
+			introduction="pls input your value: ";
+		}
+		
+		System.out.println(introduction);
 		
 		try {
 			str=br.readLine();
